@@ -215,8 +215,6 @@
 		63FA09411D25E68500859556 /* MAAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FA09401D25E68500859556 /* MAAttachedWindow.m */; };
 		63FB74EE1311D4BC002F4E7F /* ConfigurationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FB74ED1311D4BC002F4E7F /* ConfigurationUpdater.m */; };
 		63FFC3D91D3FDF5A00CBB289 /* DropConfigsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFC3D81D3FDF5A00CBB289 /* DropConfigsView.m */; };
-		63FFD6541D0E9C8B00D4FFD9 /* Lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FFD6521D0E9C8B00D4FFD9 /* Lock.png */; };
-		63FFD6551D0E9C8B00D4FFD9 /* Lock-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FFD6531D0E9C8B00D4FFD9 /* Lock-open.png */; };
 		63FFD6581D0E9D9400D4FFD9 /* SystemAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFD6571D0E9D9400D4FFD9 /* SystemAuth.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -242,6 +240,7 @@
 		B8C9FB49170C77A400BCA243 /* LeftNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C9FB46170C77A400BCA243 /* LeftNavViewController.m */; };
 		B8D807031832EEC400A0B937 /* NSTimer+TB.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D807021832EEC400A0B937 /* NSTimer+TB.m */; };
 		B8F6264C1641C8C700943C59 /* easyRsa.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F6264B1641C8C700943C59 /* easyRsa.m */; };
+		C04AFC781F3DF47900D0EBCD /* SecurityInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04AFC761F3DE3BF00D0EBCD /* SecurityInterface.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -602,8 +601,6 @@
 		63FB74ED1311D4BC002F4E7F /* ConfigurationUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationUpdater.m; sourceTree = "<group>"; };
 		63FFC3D71D3FDF5100CBB289 /* DropConfigsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropConfigsView.h; sourceTree = "<group>"; };
 		63FFC3D81D3FDF5A00CBB289 /* DropConfigsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropConfigsView.m; sourceTree = "<group>"; };
-		63FFD6521D0E9C8B00D4FFD9 /* Lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lock.png; sourceTree = "<group>"; };
-		63FFD6531D0E9C8B00D4FFD9 /* Lock-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lock-open.png"; sourceTree = "<group>"; };
 		63FFD6561D0E9D8900D4FFD9 /* SystemAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemAuth.h; sourceTree = "<group>"; };
 		63FFD6571D0E9D9400D4FFD9 /* SystemAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemAuth.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -640,6 +637,7 @@
 		B8D807021832EEC400A0B937 /* NSTimer+TB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+TB.m"; sourceTree = "<group>"; };
 		B8F6264A1641C8C700943C59 /* easyRsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easyRsa.h; sourceTree = "<group>"; };
 		B8F6264B1641C8C700943C59 /* easyRsa.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = easyRsa.m; sourceTree = "<group>"; };
+		C04AFC761F3DE3BF00D0EBCD /* SecurityInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityInterface.framework; path = System/Library/Frameworks/SecurityInterface.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -710,6 +708,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04AFC781F3DF47900D0EBCD /* SecurityInterface.framework in Frameworks */,
 				63AB7D001D930BCE008ED621 /* QuartzCore.framework in Frameworks */,
 				6329EA021A9AF6EF00A0BFA8 /* SystemConfiguration.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
@@ -859,6 +858,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C04AFC761F3DE3BF00D0EBCD /* SecurityInterface.framework */,
 				63AB7CFF1D930BCE008ED621 /* QuartzCore.framework */,
 				6329EA031A9AF7B700A0BFA8 /* CFNetwork.framework */,
 				6329EA011A9AF6EF00A0BFA8 /* SystemConfiguration.framework */,
@@ -1015,8 +1015,6 @@
 				637A879A13B75694003C1871 /* tb-logo-309x64-2011-06-26.png */,
 				63B5E31811E34D69007D99DB /* tunnelblick.icns */,
 				63B5E31A11E34D7B007D99DB /* tunnelblick_package.icns */,
-				63FFD6521D0E9C8B00D4FFD9 /* Lock.png */,
-				63FFD6531D0E9C8B00D4FFD9 /* Lock-open.png */,
 				63206BC11D273CBD00019DFB /* info-icon-on-left-360x40.png */,
 				63206BC21D273CBD00019DFB /* info-icon-on-right-360x40.png */,
 			);
@@ -1634,10 +1632,8 @@
 				63D39BF214F9ED13002D1297 /* Configurations.png in Resources */,
 				635BF1AF1501CE4E00D87717 /* ExternalBuildCleanScript.sh in Resources */,
 				63AF2CAE15065BCB00F6D6DC /* client.route-pre-down.tunnelblick.sh in Resources */,
-				63FFD6541D0E9C8B00D4FFD9 /* Lock.png in Resources */,
 				63F0A8B31507D24800526AF9 /* MainIcon.xib in Resources */,
 				B85B5DBF15F2436200EDCF95 /* Welcome.xib in Resources */,
-				63FFD6551D0E9C8B00D4FFD9 /* Lock-open.png in Resources */,
 				B86D1314181186E900FDFB3B /* ListingWindow.xib in Resources */,
 				63EA2CAB1C9EFCF0005F0872 /* ID.lproj in Resources */,
 				632BB9EA194F2D13006CD7DA /* AlertWindow.xib in Resources */,

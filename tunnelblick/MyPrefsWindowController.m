@@ -57,6 +57,12 @@ extern unsigned         gMaximumLogSize;
 extern NSArray        * gProgramPreferences;
 extern NSArray        * gConfigurationPreferences;
 
+@interface SFAnimatedLockButton : NSButton // Private class from SecurityInterface.framework
+- (void)unlock:(BOOL)arg1;
+- (void)lock:(BOOL)arg1;
+- (void)_setupImages;
+@end
+
 @interface MyPrefsWindowController()
 
 -(void) setupViews;
@@ -173,7 +179,7 @@ TBSYNTHESIZE_NONOBJECT_GET(NSUInteger, selectedLeftNavListIndex)
         
         // Icon is unlocked; lock it and release the authorization
         lockIconIsUnlocked = FALSE;
-        [item setImage: [NSImage imageNamed: @"Lock"]];
+        [(SFAnimatedLockButton *)[item view] lock:YES];
         [item setLabel: NSLocalizedString(@"Enter admin mode", @"Toolbar text for 'Lock' icon")];
         [SystemAuth setLockSystemAuth: nil];
         TBLog(@"DB-AA", @"lockTheLockIcon: Locked the lock icon and set lockSystemAuth to nil");
@@ -231,7 +237,7 @@ TBSYNTHESIZE_NONOBJECT_GET(NSUInteger, selectedLeftNavListIndex)
         [self setLockTheLockIconTimer: timer];
         [self setLockTimeoutDate: [[NSDate date] dateByAddingTimeInterval: 300.00]];
         
-        [item setImage: [NSImage imageNamed: @"Lock-open"]];
+        [(SFAnimatedLockButton *)[item view] unlock:YES];
         [self setLockLabelWithTimeLeft];
         lockIconIsUnlocked = TRUE;
         if (  ! [[self window] isVisible]  ) {
@@ -286,7 +292,7 @@ TBSYNTHESIZE_NONOBJECT_GET(NSUInteger, selectedLeftNavListIndex)
         
         // Lock icon is showing "Unlocked"
         lockIconIsUnlocked = FALSE;
-        [item setImage: [NSImage imageNamed: @"Lock"]];
+        [(SFAnimatedLockButton *)[item view] lock:YES];
         [item setLabel: NSLocalizedString(@"Enter admin mode", @"Toolbar text for 'Lock' item")];
         [lockTheLockIconTimer invalidate];
         [SystemAuth setLockSystemAuth: nil];
@@ -318,7 +324,13 @@ TBSYNTHESIZE_NONOBJECT_GET(NSUInteger, selectedLeftNavListIndex)
 
     NSToolbarItem * item = [[[NSToolbarItem alloc] initWithItemIdentifier: identifier] autorelease];
     [item setLabel: NSLocalizedString(@"Enter admin mode", @"Toolbar text for 'Lock' item")];
-    [item setImage: [NSImage imageNamed: @"Lock"]];
+    
+    SFAnimatedLockButton * btn = [[[SFAnimatedLockButton alloc] initWithFrame: NSMakeRect(0, 0, 32, 32)] autorelease];
+    [btn setButtonType: NSButtonTypeMomentaryChange];
+    [btn setBordered: NO];
+    [btn _setupImages];
+    [item setView: btn];
+    
     [item setTarget: self];
 	[item setAction: @selector(toggleLockItem)];
     [item setEnabled: YES];
